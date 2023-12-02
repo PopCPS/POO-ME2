@@ -73,17 +73,22 @@ public class AppProva {
 	        System.out.print("Insira a terceira opção : ");
 	        questaoME.setOpcaoC(scanner.nextLine());
 	        
+            boolean firstTry = true;
+	        
 	        while(true){
 	            try{
 	                System.out.print("Insira quantos pontos vale a questão : ");
+                    if(firstTry == false){
+                        scanner.nextLine();
+	                }      
+	                firstTry = false;
                     questaoME.setNotaPadrao(scanner.nextDouble());
+                    scanner.nextLine();
                     break;
 	            }catch(InputMismatchException ex){
 	                System.out.println("Apenas números são válidos");
 	            }
 	        }
-            
-            scanner.nextLine();
 
             while(true){
     	        try{
@@ -151,9 +156,15 @@ public class AppProva {
 	            }
             } 
 	        
+	        boolean firstTry = true;
+	        
             while(true){
 	            try{
 	                System.out.print("Insira quantos pontos vale a questão : ");
+	                if(firstTry == false){
+                        scanner.nextLine();
+	                }      
+	                firstTry = false;
                     questaoVF.setNotaPadrao(scanner.nextDouble());
                     break;
 	            }catch(InputMismatchException ex){
@@ -182,13 +193,21 @@ public class AppProva {
             System.out.print("Insira a primeira opção : ");
             questaoRP.setOpcaoA(scanner.nextLine());
             
+            boolean firstTry = true;
+            
             while(true){
                 try{
                     System.out.print("Insira o valor desta questão : ");
+                    if(firstTry == false){
+                        scanner.nextLine();
+	                }      
+	                firstTry = false;
                     questaoRP.setValorOpcaoA(scanner.nextInt());
                     break;
                 }catch(NonExistentCorrectAnswer ex){
                     System.out.println(ex.getMessage());
+                }catch(InputMismatchException ex){
+                    System.out.println("Apenas números são válidos");
                 }
             }
             
@@ -196,13 +215,21 @@ public class AppProva {
             System.out.print("Insira a segunda opção : ");
             questaoRP.setOpcaoB(scanner.nextLine());
             
+            firstTry = true;
+            
             while(true){
                 try{
                     System.out.print("Insira o valor desta questão : ");
+                    if(firstTry == false){
+                        scanner.nextLine();
+	                }      
+	                firstTry = false;
                     questaoRP.setValorOpcaoB(scanner.nextInt());
                     break;
                 }catch(NonExistentCorrectAnswer ex){
                     System.out.println(ex.getMessage());
+                }catch(InputMismatchException ex){
+                    System.out.println("Apenas números são válidos");
                 }
             }
             
@@ -210,19 +237,33 @@ public class AppProva {
             System.out.print("Insira a terceira opção : ");
             questaoRP.setOpcaoC(scanner.nextLine());
             
+            firstTry = true;
+            
             while(true){
                 try{
                     System.out.print("Insira o valor desta questão : ");
+                    if(firstTry == false){
+                        scanner.nextLine();
+	                }      
+	                firstTry = false;
                     questaoRP.setValorOpcaoC(scanner.nextInt());
                     break;
                 }catch(NonExistentCorrectAnswer ex){
                     System.out.println(ex.getMessage());
+                }catch(InputMismatchException ex){
+                    System.out.println("Apenas números são válidos");
                 }
             }
+            
+            firstTry = true;
             
             while(true){
 	            try{
 	                System.out.print("Insira quantos pontos vale a questão : ");
+	                if(firstTry == false){
+                        scanner.nextLine();
+	                }      
+	                firstTry = false;
                     questaoRP.setNotaPadrao(scanner.nextDouble());
                     break;
 	            }catch(InputMismatchException ex){
