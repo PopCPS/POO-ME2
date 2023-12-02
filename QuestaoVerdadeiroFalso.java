@@ -8,7 +8,8 @@ public class QuestaoVerdadeiroFalso extends Questao
     private char respostaMarcadaC;
     
     public QuestaoVerdadeiroFalso(){
-        this.idQuestao = contador++;
+        setIdQuestao(contador);
+        contador++;
    }
     
     public void marcaOpcao(char opcao, char respostaMarcada) throws NonExistentCorrectAnswer{
@@ -29,13 +30,13 @@ public class QuestaoVerdadeiroFalso extends Questao
     
     public double calculaNotaObtida(){
         if(respostaCorretaA == respostaMarcadaA){
-            this.notaObtida += notaPadrao / 3;
+            notaObtida += getNotaPadrao() / 3;
         }
         if(respostaCorretaB == respostaMarcadaB){
-            this.notaObtida += notaPadrao / 3;
+            notaObtida += getNotaPadrao() / 3;
         }
         if(respostaCorretaC == respostaMarcadaC){
-            this.notaObtida += notaPadrao / 3;
+            notaObtida += getNotaPadrao() / 3;
         }
         return notaObtida;
     }
@@ -46,15 +47,15 @@ public class QuestaoVerdadeiroFalso extends Questao
             "\n" +
             "*** Questão Verdadeiro ou Falso ***" + "\n" + 
             "\n" +
-            "Número          : " + idQuestao + "\n" + 
+            "Número          : " + getIdQuestao() + "\n" + 
             "\n" +
-            "Enunciado       : " + enunciado + "\n" +
+            "Enunciado       : " + getEnunciado() + "\n" +
             "\n" +
-            "A - " + opcaoA + "\n" + 
-            "B - " + opcaoB + "\n" +
-            "C - " + opcaoC + "\n" +
+            "A - " + getOpcaoA() + "\n" + 
+            "B - " + getOpcaoB() + "\n" +
+            "C - " + getOpcaoC() + "\n" +
             "\n" +
-            "Nota da questão : " + notaPadrao
+            "Nota da questão : " + getNotaPadrao()
         );
     }
     
