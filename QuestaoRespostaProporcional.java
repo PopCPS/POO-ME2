@@ -6,7 +6,8 @@ public class QuestaoRespostaProporcional extends Questao
   private char opcaoMarcada;
   
     public QuestaoRespostaProporcional(){
-        this.idQuestao = contador++;
+        setIdQuestao(contador);
+        contador++;
     }
   
     public void marcaOpcao(char opcaoMarcada) throws NonExistentCorrectAnswer {
@@ -19,13 +20,13 @@ public class QuestaoRespostaProporcional extends Questao
   
     public double calculaNotaObtida(){
         if(opcaoMarcada == 'A'){
-            return this.notaObtida = notaPadrao / 100 * valorOpcaoA;
+            return this.notaObtida = getNotaPadrao() / 100 * valorOpcaoA;
         }
         if(opcaoMarcada == 'B'){
-            return this.notaObtida = notaPadrao / 100 * valorOpcaoB;
+            return this.notaObtida = getNotaPadrao() / 100 * valorOpcaoB;
         }
         if(opcaoMarcada == 'C'){
-            return this.notaObtida = notaPadrao / 100 * valorOpcaoC;
+            return this.notaObtida = getNotaPadrao() / 100 * valorOpcaoC;
         }
         return 0;
     }
@@ -34,17 +35,17 @@ public class QuestaoRespostaProporcional extends Questao
     public String toString(){
         return(
             "\n" +
-            "*** Questão Verdadeiro ou Falso ***" + "\n" + 
+            "*** Questão Resposta Proporcional ***" + "\n" + 
             "\n" +
-            "Número          : " + idQuestao + "\n" + 
+            "Número          : " + getIdQuestao() + "\n" + 
             "\n" +
-            "Enunciado       : " + enunciado + "\n" +
+            "Enunciado       : " + getEnunciado() + "\n" +
             "\n" +
-            "A - " + opcaoA + "\n" + 
-            "B - " + opcaoB + "\n" +
-            "C - " + opcaoC + "\n" +
+            "A - " + getOpcaoA() + "\n" + 
+            "B - " + getOpcaoB() + "\n" +
+            "C - " + getOpcaoC() + "\n" +
             "\n" +
-            "Nota da questão : " + notaPadrao
+            "Nota da questão : " + getNotaPadrao()
         );
     }
     
