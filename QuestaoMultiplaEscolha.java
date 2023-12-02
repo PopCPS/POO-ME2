@@ -4,7 +4,8 @@ public class QuestaoMultiplaEscolha extends Questao
     private char opcaoMarcada;
     
     public QuestaoMultiplaEscolha(){
-            this.idQuestao = contador++;
+            setIdQuestao(contador);
+            contador++;
     }
     
     public void marcaOpcao(char opcaoMarcada) throws NonExistentCorrectAnswer {
@@ -17,7 +18,7 @@ public class QuestaoMultiplaEscolha extends Questao
     
     public double calculaNotaObtida(){
         if(opcaoMarcada == opcaoCorreta){
-            this.notaObtida = notaPadrao;
+            this.notaObtida = getNotaPadrao();
             return notaObtida;
         }else{
             this.notaObtida = 0;
@@ -31,21 +32,16 @@ public class QuestaoMultiplaEscolha extends Questao
             "\n" +
             "*** Questão de Multipla Escolha ***" + "\n" +
             "\n" +
-            "Número          : " + idQuestao + "\n" +
+            "Número          : " + getIdQuestao() + "\n" +
             "\n" +
-            "Enunciado       : " + enunciado + "\n" +
+            "Enunciado       : " + getEnunciado() + "\n" +
             "\n" +
-            "A - " + opcaoA + "\n" +
-            "B - " + opcaoB + "\n" +
-            "C - " + opcaoC + "\n" +
+            "A - " + getOpcaoA() + "\n" +
+            "B - " + getOpcaoB() + "\n" +
+            "C - " + getOpcaoC() + "\n" +
             "\n" +
-            "Nota da questão : " + notaPadrao
+            "Nota da questão : " + getNotaPadrao()
         );
-    }
-    
-    
-    public void setNotaPadrao(double notaPadrao){
-        this.notaPadrao = notaPadrao;
     }
     
     public void setOpcaoCorreta(char opcaoCorreta) throws NonExistentCorrectAnswer{
